@@ -1,4 +1,57 @@
+import anime from "animejs";
+import { useEffect } from "react";
+
 function Partwo() {
+  useEffect(() => {
+    let animationsPlayed = false;
+
+    const handleScrool = () => {
+      if (animationsPlayed) {
+        return;
+      }
+      const titleElement = document.querySelector(".title-animation");
+      const cardElements = document.querySelectorAll(".card-animation");
+
+      const titleOffset = titleElement.getBoundingClientRect().top;
+      const cardOffset = cardElements[0].getBoundingClientRect().top;
+
+      const triggerOffset = window.innerHeight * 0.7;
+
+      if (titleOffset < triggerOffset) {
+        anime({
+          targets: ".title-animation",
+          translateY: [-50, 0],
+          opacity: [0, 1],
+          easing: ["easeInOutQuad"],
+          duration: 800,
+          delay: anime.stagger(200),
+          complete: () => {
+            animationsPlayed = true;
+          },
+        });
+      }
+
+      if (cardOffset < triggerOffset) {
+        anime({
+          targets: ".card-animation",
+          translateX: [-50, 0],
+          opacity: [0, 1],
+          easing: ["easeInOutQuad"],
+          duration: 800,
+          delay: anime.stagger(200, { start: 300 }),
+          complete: () => {
+            animationsPlayed = true;
+          },
+        });
+      }
+    };
+
+    window.addEventListener("scroll", handleScrool);
+    return () => {
+      window.removeEventListener("scroll", handleScrool);
+    };
+  }, []);
+
   return (
     <div>
       <section className="relative ">
@@ -13,11 +66,11 @@ function Partwo() {
             <div className="container relative mx-auto ">
               <div className="items-center flex flex-wrap">
                 <div className="w-full lg:w-6-/12 px-4 py-6 ml-auto mr-auto text-center pt-32">
-                  <h1 className="text-white font-semibold text-5xl">
+                  <h1 className="text-white font-semibold text-5xl title-animation">
                     Lorem ipsum dolor sit amet.
                   </h1>
 
-                  <p className="mt-4 text-lg text-white ">
+                  <p className="mt-4 text-lg text-white title-animation ">
                     Lorem ipsum dolor sit amet consectetur adipisicing elit.
                   </p>
                 </div>
@@ -26,11 +79,11 @@ function Partwo() {
           </div>
         </div>
 
-        <section className="pb-10 -mt-24 bg-white dark:bg-primary-dark">
+        <section className="pb-10 -mt-24 bg-white dark:bg-black">
           <div className="container mx-auto px-4">
             <div className="flex flex-wrap">
               <div className="lg:pt-12 pt-6 w-full md:w-4/12 px-4 text-center ">
-                <div className="relative flex flex-col bg-white w-full mb-8 shadow-lg rounded-lg">
+                <div className="relative flex flex-col bg-white w-full mb-8 shadow-lg rounded-lg card-animation">
                   <div className="p-3 text-center items-center justify-center mx-auto">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -60,7 +113,7 @@ function Partwo() {
                 </div>
               </div>
 
-              <div className="lg:pt-4 pt-6 w-full md:w-4/12 px-4 text-center ">
+              <div className="lg:pt-4 pt-6 w-full md:w-4/12 px-4 text-center card-animation ">
                 <div className="relative flex flex-col bg-white w-full mb-8 shadow-lg rounded-lg">
                   <div className="p-3 text-center items-center justify-center mx-auto">
                     <svg
@@ -91,7 +144,7 @@ function Partwo() {
                 </div>
               </div>
 
-              <div className="lg:pt-12 pt-6 w-full md:w-4/12 px-4 text-center ">
+              <div className="lg:pt-12 pt-6 w-full md:w-4/12 px-4 text-center card-animation ">
                 <div className="relative flex flex-col bg-white w-full mb-8 shadow-lg rounded-lg">
                   <div className="p-3 text-center items-center justify-center mx-auto">
                     <svg

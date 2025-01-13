@@ -38,7 +38,7 @@ function Header() {
   }, []);
 
   const HeaderClassName = scrolling
-    ? "fixed bg-primary-light dark:bg-primary-dark text-second-light dark:text-second-dark inset-x-0 top-0 z-50 py-2 border-b border-slate-600 shadow-2xl"
+    ? "fixed bg-primary-light dark:bg-black text-second-light dark:text-second-dark inset-x-0 top-0 z-50 py-2 border-b border-slate-600 shadow-2xl"
     : "absolute inset-x-0 top-0 z-50 py-2 border-b border-slate-600 shadow-2xl";
 
   useEffect(() => {
@@ -69,7 +69,7 @@ function Header() {
     };
     animateImage2();
   }, []);
-
+ 
   return (
     <div className="relative">
       <header className={HeaderClassName}>
