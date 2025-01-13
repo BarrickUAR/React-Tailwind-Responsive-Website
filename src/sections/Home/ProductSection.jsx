@@ -134,7 +134,7 @@ function ProductSection() {
                     lorem ipsum
                   </h1>
 
-                  <p className="mt-4 text-lg text-white title-animation">
+                  <p className="mt-4 text-lg text-white">
                     Lorem Ipsum is simply dummy text of the printing and
                     typesetting industry. Lorem Ipsum has
                   </p>
@@ -145,7 +145,7 @@ function ProductSection() {
         </div>
       </section>
 
-      <section className="py-10 bg-white dark:bg-black">
+      <section className="py-10 bg-white dark:bg-primary-dark">
         <div className="  p-3 text-center">
           <p className="text-4xl    mt-6 mb-20 ">
             <span className="border-b-2 font-lora  border-gray-800 dark:border-slate-300 text-black dark:text-white">
@@ -171,3 +171,10 @@ function ProductSection() {
 }
 
 export default ProductSection;
+// <div className="topproduct" key={product.id}>
+//   <ProductCard
+//     title={product.title}
+//     image={product.image}
+//     price={product.price}
+//   />
+// </div>

@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
 function Menu() {
@@ -29,21 +29,22 @@ function Menu() {
     <div>
       {isMobileMenuOpen && (
         <div className="fixed left-0 top-0 w-full h-full z-50 bg-black bg-opacity-30 shadow">
-          <div className="absolute left-0 top-0 w-72 h-full z-50 bg-white dark:bg-black text-second-light dark:text-white">
+          <div className="absolute left-0 top-0 w-72 h-full z-50 bg-primary-light dark:bg-primary-dark text-second-light dark:text-second-dark">
             <div
               onClick={toggleMobileMenu}
-              className="absolute right-3 top-3 cursor-pointer" >
+              className="absolute right-3 top-3 cursor-pointer"
+            >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
                 viewBox="0 0 24 24"
-                strokeWidth="1.5"
+                stroke-width="1.5"
                 stroke="currentColor"
-                className="w-6 h-6"
+                class="w-6 h-6"
               >
                 <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
                   d="M6 18L18 6M6 6l12 12"
                 />
               </svg>
@@ -111,7 +112,7 @@ function Menu() {
         </div>
       )}
       <div className="container mx-auto flex items-center justify-between px-4">
-        <div className=" text-white dark:text-white text-xl  transition font-bold">Logo</div>
+        <div className=" text-white text-xl  transition font-bold">Logo</div>
 
         <div className="hidden md:flex space-x-4">
           <Link to="/">
@@ -224,7 +225,6 @@ function Menu() {
             </svg>
           </a>
         </div>
-
       </div>
     </div>
   );

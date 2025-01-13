@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import anime from "animejs/lib/anime.es.js";
 
 function Footer() {
@@ -54,7 +54,7 @@ function Footer() {
     };
   }, []);
   return (
-    <div className="bg-white border-t-4 border-black text-black shadow-2xl dark:bg-black dark:text-white dark:border-t-4"> 
+    <div className="bg-primary-light dark:bg-primary-dark text-white dark:text-second-dark  shadow-2xl">
       <div className="bg-second-light text-black p-1 bg-opacity-50 text-center"></div>
       <div className="container mx-auto p-8 ">
         <footer className="flex flex-wrap ">
@@ -108,6 +108,13 @@ function Footer() {
             </ul>
           </div>
         </footer>
+      </div>
+
+      <div className="bg-second-light text-black p-3 text-center">
+        <p className="text-md font-semibold">
+          🎄 is simply dummy text of the printing and typesetting industry.
+          Lorem
+        </p>
       </div>
     </div>
   );
